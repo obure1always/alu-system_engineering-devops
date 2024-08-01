@@ -10,14 +10,14 @@ apt-get -y install haproxy
 # edit config file
 server_config=\
 "
-frontend John Obure-frontend
+frontend Obure-frontend
         bind *:80
         mode http
-        default_backend John Obure-backend
-backend John Obure-backend
+        default_backend Obure-backend
+backend Obure-backend
         balance roundrobin
-        server 6233-web-01 54.234.186.20 check
-        server 6233-web-02 54.196.136.86 check
+        server 6233-web-01 54.86.160.53 check
+        server 6233-web-02 54.160.206.107 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
