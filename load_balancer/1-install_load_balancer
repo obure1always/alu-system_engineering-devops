@@ -16,8 +16,8 @@ frontend Obure-frontend
         default_backend Obure-backend
 backend Obure-backend
         balance roundrobin
-        server 6233-web-01 54.86.160.53 check
-        server 6233-web-02 54.160.206.107 check
+        server 6233-web-01 54.86.160.53:80 check
+        server 6233-web-02 54.160.206.107:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
